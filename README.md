@@ -6,7 +6,7 @@ Constução de uma Landing Page genérica,
 <img src="https://github.com/isaacviannadev/d3-covid-projection/blob/main/d3gif.gif" width=800px alt="Exemplo">
 
 ---
-<center>⚡️ Teste na versão  [publicada](https://d3-covid-projection.vercel.app/](https://netlinks-teste-frontend.vercel.app) </center>
+<center>⚡️ Teste na versão  [publicada](https://netlinks-teste-frontend.vercel.app) </center>
 
 ## Aplicação desenvolvida em
 
