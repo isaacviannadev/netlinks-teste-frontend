@@ -8,6 +8,7 @@ export const FooterSectionWrapper = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
+  background: var(--primary-color);
 
   &::before {
     content: '';
@@ -19,7 +20,7 @@ export const FooterSectionWrapper = styled.section`
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.1;
+    opacity: 0.5;
   }
 `;
 
