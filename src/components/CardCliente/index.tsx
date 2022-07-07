@@ -1,5 +1,11 @@
 import React from 'react';
 import Card from '../UI/Card';
+
+import cliente1 from '/public/Group 1.png';
+import cliente2 from '/public/Group 2.png';
+import cliente3 from '/public/Group 3.png';
+import cliente4 from '/public/Group 4.png';
+
 import {
   CardClienteContent,
   CardClienteContentDetail,
@@ -14,12 +20,27 @@ export type CardClienteProps = {
 };
 
 const CardCliente: React.FC<CardClienteProps> = ({ id, nome, img }) => {
+  const getImg = (id: number) => {
+    switch (id) {
+      case 1:
+        return cliente1;
+      case 2:
+        return cliente2;
+      case 3:
+        return cliente3;
+      case 4:
+        return cliente4;
+      default:
+        return cliente1;
+    }
+  };
+
   return (
     <CardClienteWrapper>
       <CardClienteContent>
         <CardClienteContentHeader>
           <div className='logo-box'>
-            <img src={img} alt={nome} />
+            <img src={getImg(id)} alt={nome} />
           </div>
 
           <div className='info-box'>
