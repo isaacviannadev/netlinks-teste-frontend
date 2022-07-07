@@ -33,7 +33,9 @@ const CardCliente: React.FC<CardClienteProps> = ({ id, nome, img }) => {
 
         <CardClienteContentDetail>
           <div className='left-cliente'>
-            <Card noShadow></Card>
+            <Card noShadow>
+              <div></div>
+            </Card>
           </div>
           <div className='right-cliente'>
             <p>
