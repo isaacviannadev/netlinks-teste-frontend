@@ -8,7 +8,6 @@ export const FooterSectionWrapper = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
-  background: var(--primary-color);
 
   &::before {
     content: '';
