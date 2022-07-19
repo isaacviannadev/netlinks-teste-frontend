@@ -37,6 +37,8 @@ export const ClientesSectionTitle = styled.p`
   }
 
   @media only screen and (max-width: 768px) {
+    white-space: normal;
+
     font-size: 1.8rem;
     gap: 8px;
     strong {

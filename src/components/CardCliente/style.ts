@@ -75,6 +75,9 @@ export const CardClienteContentHeader = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 6px;
+
     .logo-box {
       img {
         width: 100px;

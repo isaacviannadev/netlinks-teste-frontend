@@ -201,5 +201,7 @@ export const HelpItemDescription = styled.div`
 
 export const HelpButtonContainer = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 380px;
 `;

@@ -83,4 +83,12 @@ export const FooterSectionTitle = styled.div`
     font-weight: 900;
     line-height: 2.8rem;
   }
+
+  @media only screen and (max-width: 768px) {
+    gap: 8px;
+
+    strong {
+      font-size: 2.5rem;
+    }
+  }
 `;

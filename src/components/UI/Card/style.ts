@@ -13,6 +13,10 @@ const CardWrapper = styled.div<CardProps>`
     noShadow ? 'none' : '0px 2px 11px rgba(0, 0, 0, 0.25)'};
   background-color: ${({ color }) => color || 'var(--color-white)'};
   width: fit-content;
+
+  @media only screen and (max-width: 768px) {
+    padding: ${(props) => props.padding || '1px'};
+  }
 `;
 
 export default CardWrapper;

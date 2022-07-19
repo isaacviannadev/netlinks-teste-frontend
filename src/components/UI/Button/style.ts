@@ -32,6 +32,11 @@ const ButtonSC = styled.button<ButtonProps>`
   &:hover {
     filter: brightness(0.87);
   }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1rem;
+    width: 80%;
+  }
 `;
 
 export default ButtonSC;
