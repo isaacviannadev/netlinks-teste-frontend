@@ -17,7 +17,7 @@ export const ClientesSectionHeader = styled.div`
   background: var(--primary-color);
   padding: 60px 0;
   @media only screen and (max-width: 768px) {
-    padding: 40px 12px;
+    padding: 20px 10px;
   }
 `;
 
@@ -27,7 +27,6 @@ export const ClientesSectionTitle = styled.p`
   font-size: 2rem;
   font-weight: 700;
   gap: 16px;
-  white-space: nowrap;
 
   strong {
     font-size: 3rem;
@@ -39,10 +38,10 @@ export const ClientesSectionTitle = styled.p`
   @media only screen and (max-width: 768px) {
     white-space: normal;
 
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     gap: 8px;
     strong {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
     }
   }
 `;

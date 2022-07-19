@@ -179,5 +179,25 @@ export const CardClienteContentDetail = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
+    .right-cliente {
+      padding: 0 4px;
+      gap: 6px;
+      > p {
+        font-size: 0.9rem;
+        line-height: 1.1rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p.destaque {
+        font-size: 1rem;
+      }
+    }
   }
 `;
