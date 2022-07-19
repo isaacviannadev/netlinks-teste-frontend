@@ -1,20 +1,21 @@
 import styled from 'styled-components';
 
-export const HelpSectionWrapper = styled.section`
+export const TimelineSectionWrapper = styled.section`
   display: flex;
   width: 100%;
   height: 100%;
   padding: 120px 0;
-  background-color: var(--primary-color);
+  background-color: #f5f5f5;
   align-items: center;
   justify-content: center;
+  color: black;
 
   @media only screen and (max-width: 768px) {
     padding: 60px 0;
   }
 `;
 
-export const HelpSectionContainer = styled.div`
+export const TimelineSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -23,52 +24,113 @@ export const HelpSectionContainer = styled.div`
   justify-content: center;
   max-width: 1240px;
   gap: 60px;
+  position: relative;
+
+  .buttonNavigation {
+    display: flex;
+    width: 46px;
+    height: 46px;
+    border: 4px solid #fd645f;
+    background: white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -23px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .dotsGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 32px;
+    height: fit-content;
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    & .dot {
+      display: flex;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #d9d9d9;
+
+      &.active {
+        background: #fd645f;
+      }
+    }
+  }
 
   @media only screen and (max-width: 768px) {
     gap: 40px;
-  }
-`;
 
-export const HelpSectionTitle = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: 700;
-  gap: 16px;
-
-  strong {
-    font-size: 3rem;
-    position: relative;
-    color: var(--secondary-color);
-
-    &:after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 3px;
-      background-color: var(--text-color-black);
-      position: absolute;
-      bottom: 5px;
+    & .dotsGroup {
+      display: none;
     }
   }
 `;
 
-export const HelpListItens = styled.div`
+export const TimelineCategory = styled.div`
+  font-size: 12px;
+  position: relative;
+  strong {
+    color: black !important;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 100%;
+    background-color: #fd645f;
+    position: absolute;
+    left: -10px;
+  }
+`;
+
+export const TimelineSectionTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+  font-size: 2rem;
+  font-weight: normal;
+  gap: 16px;
+  width: 100%;
+  strong {
+    color: hsla(203, 70%, 36%, 1);
+  }
+`;
+
+export const TimelineListItens = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 900px;
+  overflow: hidden;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
-export const HelpItem = styled.div`
+export const TimelineItem = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 480px;
+  height: 300px;
+  min-height: 300px;
 
   .left,
   .right {
@@ -78,12 +140,31 @@ export const HelpItem = styled.div`
     height: 100%;
     padding: 0px 16px;
     gap: 60px;
+    position: relative;
 
     img {
       margin-top: 20px;
       width: 100%;
       height: auto;
       max-width: 400px;
+    }
+
+    .lineTopLeft,
+    .lineTopRight {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #293953;
+      top: 36px;
+      z-index: 1;
+    }
+
+    .lineTopLeft {
+      right: -28px;
+    }
+    .lineTopRight {
+      left: -28px;
     }
   }
 
@@ -115,29 +196,35 @@ export const HelpItem = styled.div`
       background-color: var(--text-color-black);
     }
 
-    .end {
+    .checkpoint {
       display: block;
       position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: var(--secondary-color);
+      width: 32px;
+      height: 32px;
+      background-color: white;
+      border: 4px solid #fd645f;
       border-radius: 50%;
-      bottom: 0;
+      top: 20px;
+      z-index: 2;
     }
   }
 
   @media only screen and (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
     align-items: center;
     justify-content: center;
     position: relative;
-
     padding: 16px 0;
 
-    &:nth-child(2),
-    &:nth-child(4) {
-      flex-direction: column-reverse;
+    &:nth-child(1) .left,
+    &:nth-child(3) .left,
+    &:nth-child(7) .left {
+      display: none;
+    }
+    &:nth-child(2) .right,
+    &:nth-child(6) .right {
+      display: none;
     }
 
     .left,
@@ -146,9 +233,9 @@ export const HelpItem = styled.div`
       align-items: center;
       justify-content: center;
 
-      img {
-        margin: 0 0 20px;
-        max-width: 220px;
+      .lineTopLeft,
+      .lineTopRight {
+        display: none;
       }
     }
 
@@ -157,17 +244,12 @@ export const HelpItem = styled.div`
     }
 
     .divider {
-      position: absolute;
-      left: 3px;
-
-      img {
-        left: -12px;
-      }
+      display: none;
     }
   }
 `;
 
-export const HelpItemTitle = styled.div`
+export const TimelineItemTitle = styled.div`
   padding: 0px 16px;
   display: flex;
   flex-direction: column;
@@ -177,7 +259,7 @@ export const HelpItemTitle = styled.div`
   font-weight: 700;
 `;
 
-export const HelpItemDescription = styled.div`
+export const TimelineItemDescription = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -199,7 +281,27 @@ export const HelpItemDescription = styled.div`
   }
 `;
 
-export const HelpButtonContainer = styled.div`
+export const TimelineImage = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+
+  img.b3 {
+    height: 100%;
+    width: auto;
+    max-height: 200px;
+  }
+`;
+
+export const TimelineButtonContainer = styled.div`
   display: flex;
   width: 380px;
+`;
+
+export const TimelineHeader = styled.div`
+  margin-top: 18px;
 `;

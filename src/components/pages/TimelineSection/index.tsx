@@ -1,146 +1,305 @@
-import Button from '../../UI/Button';
+import { CaretDown, CaretUp } from 'phosphor-react';
+import { useEffect, useState } from 'react';
 
-import Icon1 from '/ico1.png';
-import Icon2 from '/ico2.png';
-import Icon3 from '/ico3.png';
-import Icon4 from '/ico4.png';
-import Ilu1 from '/illustration1.png';
-import Ilu2 from '/illustration2.png';
-import Ilu3 from '/illustration3.png';
-import Ilu4 from '/illustration4.png';
+import Img1 from '/selos-agro-e-retail-broker.jpg';
+import Img2 from '/selo-execution-broker.jpg';
+import Img3 from '/bicampea-exame.png';
+import Img4 from '/tricampea-exame.png';
+import Img5 from '/b3-qo.png';
 
 import {
-  HelpButtonContainer,
-  HelpItem,
-  HelpItemDescription,
-  HelpItemTitle,
-  HelpListItens,
-  HelpSectionContainer,
-  HelpSectionTitle,
-  HelpSectionWrapper,
+  TimelineCategory,
+  TimelineHeader,
+  TimelineImage,
+  TimelineItem,
+  TimelineItemDescription,
+  TimelineItemTitle,
+  TimelineListItens,
+  TimelineSectionContainer,
+  TimelineSectionTitle,
+  TimelineSectionWrapper,
 } from './style';
 
-export const HelpSection = () => {
+export const TimelineSection = () => {
+  const [selectedView, setSelectedView] = useState(1);
+
+  const scrollTo = (id: number) => {
+    const element = document.getElementById(`${String(id)}`);
+
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleView = () => {
+    if (selectedView === 4) {
+      setSelectedView(1);
+    } else {
+      setSelectedView(selectedView + 1);
+    }
+  };
+
+  useEffect(() => {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot) => {
+      dot.classList.remove('active');
+    });
+    const dot = document.querySelector(
+      `.dot[data-id="${String(selectedView)}"]`
+    );
+    if (dot) {
+      dot.classList.add('active');
+    }
+    scrollTo(selectedView);
+  }, [selectedView]);
+
   return (
-    <HelpSectionWrapper>
-      <HelpSectionContainer>
-        <HelpSectionTitle>
-          <strong>como</strong>
-          <p>vamos te ajudar</p>
-        </HelpSectionTitle>
+    <TimelineSectionWrapper>
+      <TimelineSectionContainer>
+        <TimelineSectionTitle>
+          <TimelineCategory>
+            <span>
+              Linha <strong>do tempo</strong>
+            </span>
+          </TimelineCategory>
+          <p>
+            Nossa
+            <strong> História</strong>
+          </p>
+        </TimelineSectionTitle>
 
-        <HelpListItens>
-          <HelpItem>
+        <TimelineListItens>
+          <TimelineItem id='1'>
             <div className='left'>
-              <img src={Ilu1} alt='Ilu1' />
+              <div className='lineTopLeft'></div>
             </div>
             <div className='divider'>
-              <img src={Icon1} alt='icon' />
+              <div className='checkpoint' />
               <div className='line' />
             </div>
             <div className='right'>
-              <HelpItemTitle>Estratégia</HelpItemTitle>
-              <HelpItemDescription>
+              <TimelineHeader>
+                <TimelineItemTitle>1983</TimelineItemTitle>
+                <TimelineItemTitle>Início das Atividades</TimelineItemTitle>
+              </TimelineHeader>
+              <TimelineItemDescription>
                 <p>
-                  Uma boa estratégia é o principal fator responsável pelo SEO
-                  que gera vendas. Através da escolha certa de
-                  <strong> palavras-chave</strong>, análise de{' '}
-                  <strong> concorrência</strong>, auditoria técnica e{' '}
-                  <strong>monitoramento</strong> dos <strong>resultados</strong>{' '}
-                  é que vamos alcançar os resultados e metas. Um dos nossos
-                  diferenciais é a estratégia de Cauda Longa, uma técnica focada
-                  em priorizar palavras-chave com menor volume de buscas mas
-                  altas taxas de conversão, além de serem conquistadas mais
-                  rapidamente.
+                  A Nova Futura Investimentos inicia suas atividades com o nome
+                  Futura Corretora, nos mercados de derivativos, como
+                  sócia-fundadora da BM&F (Bolsa de Mercadorias e Futuros).
                 </p>
-              </HelpItemDescription>
+              </TimelineItemDescription>
             </div>
-          </HelpItem>
-
-          <HelpItem>
+          </TimelineItem>
+          <TimelineItem>
             <div className='left'>
-              <HelpItemTitle>Conteúdo</HelpItemTitle>
-              <HelpItemDescription>
+              <TimelineHeader>
+                <TimelineItemTitle>1996</TimelineItemTitle>
+                <TimelineItemTitle>Hedge de Commodities</TimelineItemTitle>
+              </TimelineHeader>
+              <TimelineItemDescription>
                 <p>
-                  Criamos conteúdos de posts, páginas e produtos que os clientes
-                  e os buscadores amam. Contamos com <strong>redatores</strong>{' '}
-                  e analistas de conteúdo <strong>criativos</strong>, com grande
-                  conhecimento das boas práticas de redação e geração de{' '}
-                  <strong>vendas</strong>. O processo funciona com a pesquisa de
-                  referências por nossa equipe ou com alguém da sua equipe
-                  nutrindo com direcionamentos <strong>especializados</strong>.
-                  Também garantimos que todos os nossos conteúdos são{' '}
-                  <strong>originais</strong> através de ferramentas anti-plágio.
+                  Pioneira na introdução do conceito de Hedge de Commodities, em
+                  1996, foi reconhecida pela BMF como Corretora de Destaque na
+                  Negociação de Contratos Futuros Agropecuários nas modalidades
+                  Açúcar, Soja, Álcool e Boi.
                 </p>
-              </HelpItemDescription>
+              </TimelineItemDescription>
             </div>
             <div className='divider'>
-              <img src={Icon2} alt='icon' />
+              <div className='checkpoint' />
+
               <div className='line' />
             </div>
             <div className='right'>
-              <img src={Ilu2} alt='Ilu2' />
+              <div className='lineTopRight'></div>
             </div>
-          </HelpItem>
-
-          <HelpItem>
+          </TimelineItem>
+          <TimelineItem>
             <div className='left'>
-              <img src={Ilu3} alt='Ilu3' />
+              <div className='lineTopLeft'></div>
             </div>
             <div className='divider'>
-              <img src={Icon3} alt='icon' />
+              <div className='checkpoint' />
               <div className='line' />
             </div>
             <div className='right'>
-              <HelpItemTitle>Autoridade</HelpItemTitle>
-              <HelpItemDescription>
-                <p>
-                  Conhecida como <strong>Link Building</strong>, nossa solução
-                  de aumento de autoridade é crucial para mostrar aos buscadores
-                  que sua empresa domina determinados assuntos. Fazemos isso
-                  através de uma técnica conhecida como{' '}
-                  <strong>Guest Post</strong>, onde enviamos artigos ricos e{' '}
-                  <strong>contextuais</strong> para editores de portais, blogs e
-                  empresas brasileiras que já possuem uma boa autoridade. Nesses
-                  artigos, inserimos um link para seu site de forma{' '}
-                  <strong>natural</strong> e bem vista pelo Google.
-                </p>
-              </HelpItemDescription>
+              <TimelineHeader>
+                <TimelineItemTitle>2000</TimelineItemTitle>
+                <TimelineItemTitle>
+                  Fundação da Nova Futura DTVM
+                </TimelineItemTitle>
+              </TimelineHeader>
             </div>
-          </HelpItem>
-
-          <HelpItem>
+          </TimelineItem>
+          {/* section 2*/}
+          <TimelineItem id='2'>
             <div className='left'>
-              <HelpItemTitle>Tecnologia</HelpItemTitle>
-              <HelpItemDescription>
-                <p>
-                  Além do SEO que gera vendas, somos especialistas na{' '}
-                  <strong>criação</strong> e manutenção de sites em{' '}
-                  <strong>WordPress</strong> e UX e UI Design. Essa habilidade
-                  nos permite ajudar empresas que não contam com um time interno
-                  ou fornecedor de <strong>confiança</strong> nessas áreas.
-                  Essas soluções são muito importantes para a correção dos erros
-                  técnicos encontrados na <strong>auditoria</strong> técnica.
-                  Caso você já tenha um fornecedor ou equipe interna,
-                  trabalhamos super bem em conjunto, sem nenhum problema.
-                </p>
-              </HelpItemDescription>
+              <TimelineHeader>
+                <TimelineItemTitle>2007</TimelineItemTitle>
+                <TimelineItemTitle>
+                  Recebe selos de qualificação da BM&F
+                </TimelineItemTitle>
+              </TimelineHeader>
             </div>
             <div className='divider'>
-              <img src={Icon4} alt='icon' />
+              <div className='checkpoint' />
+
               <div className='line' />
-              <div className='end'></div>
             </div>
             <div className='right'>
-              <img src={Ilu4} alt='Ilu4' />
+              <div className='lineTopRight'></div>
+              <TimelineImage>
+                <img className='b3' src={Img1} alt='Selos B3' />
+              </TimelineImage>
             </div>
-          </HelpItem>
-        </HelpListItens>
+          </TimelineItem>
+          <TimelineItem>
+            <div className='left'>
+              <div className='lineTopLeft'></div>
+              <TimelineImage>
+                <img className='b3' src={Img2} alt='Selos B3' />
+              </TimelineImage>
+            </div>
+            <div className='divider'>
+              <div className='checkpoint' />
+              <div className='line' />
+            </div>
+            <div className='right'>
+              <TimelineHeader>
+                <TimelineItemTitle>2011</TimelineItemTitle>
+                <TimelineItemTitle>
+                  Conquista o selo Execution Broker
+                </TimelineItemTitle>
+              </TimelineHeader>
+            </div>
+          </TimelineItem>
+          <TimelineItem>
+            <div className='left'>
+              <TimelineHeader>
+                <TimelineItemTitle>2015</TimelineItemTitle>
+                <TimelineItemTitle>
+                  Ocorre a fusão das corretoras Futura e Nova Futura D.T.V.M.,
+                  dando origem a Nova Futura Investimentos.
+                </TimelineItemTitle>
+              </TimelineHeader>
+            </div>
+            <div className='divider'>
+              <div className='checkpoint' />
 
-        <HelpButtonContainer>
-          <Button withShadow>VAMOS CONVERSAR</Button>
-        </HelpButtonContainer>
-      </HelpSectionContainer>
-    </HelpSectionWrapper>
+              <div className='line' />
+            </div>
+            <div className='right'>
+              <div className='lineTopRight'></div>
+            </div>
+          </TimelineItem>
+
+          {/* section 3*/}
+
+          <TimelineItem id='3'>
+            <div className='left'>
+              <div className='lineTopLeft'></div>
+            </div>
+            <div className='divider'>
+              <div className='checkpoint' />
+              <div className='line' />
+            </div>
+            <div className='right'>
+              <TimelineHeader>
+                <TimelineItemTitle>2016</TimelineItemTitle>
+                <TimelineItemTitle>
+                  Inicia a operação de Varejo e recebe o quarto Selo de
+                  Certificação - o Nonresident Investor Broker.
+                </TimelineItemTitle>
+              </TimelineHeader>
+            </div>
+          </TimelineItem>
+          <TimelineItem>
+            <div className='left'>
+              <TimelineHeader>
+                <TimelineItemTitle>2019</TimelineItemTitle>
+                <TimelineItemTitle>
+                  A melhor carteira recomendada de ações do Brasil em 2018 e
+                  2019.
+                </TimelineItemTitle>
+              </TimelineHeader>
+            </div>
+            <div className='divider'>
+              <div className='checkpoint' />
+
+              <div className='line' />
+            </div>
+            <div className='right'>
+              <div className='lineTopRight'></div>
+              <TimelineImage>
+                <img className='b3' src={Img3} alt='Bicampeã Exame' />
+              </TimelineImage>
+            </div>
+          </TimelineItem>
+          <TimelineItem>
+            <div className='left'>
+              <div className='lineTopLeft'></div>
+              <TimelineImage>
+                <img className='b3' src={Img4} alt='Tricampeã Exame' />
+              </TimelineImage>
+            </div>
+            <div className='divider'>
+              <div className='checkpoint' />
+              <div className='line' />
+            </div>
+            <div className='right'>
+              <TimelineHeader>
+                <TimelineItemTitle>2020</TimelineItemTitle>
+                <TimelineItemTitle>
+                  A melhor carteira recomendada de ações do Brasil em 2020
+                </TimelineItemTitle>
+              </TimelineHeader>
+            </div>
+          </TimelineItem>
+          {/* Section 4 */}
+          <TimelineItem id='4'>
+            <div className='left'>
+              <TimelineHeader>
+                <TimelineItemTitle>2019</TimelineItemTitle>
+                <TimelineItemTitle>
+                  A melhor carteira recomendada de ações do Brasil em 2018 e
+                  2019.
+                </TimelineItemTitle>
+              </TimelineHeader>
+            </div>
+            <div className='divider'>
+              <div className='checkpoint' />
+
+              <div className='line' />
+            </div>
+            <div className='right'>
+              <div className='lineTopRight'></div>
+              <TimelineImage>
+                <img
+                  className='b3'
+                  src={Img5}
+                  alt='B3 qualificação Operacional'
+                />
+              </TimelineImage>
+            </div>
+          </TimelineItem>
+
+          <button className='buttonNavigation' onClick={() => handleView()}>
+            {selectedView === 4 ? (
+              <CaretUp size={28} color='#fd645f' />
+            ) : (
+              <CaretDown size={28} color='#fd645f' />
+            )}
+          </button>
+
+          <div className='dotsGroup'>
+            <div className='dot active' data-id='1'></div>
+            <div className='dot' data-id='2'></div>
+            <div className='dot' data-id='3'></div>
+            <div className='dot' data-id='4'></div>
+          </div>
+        </TimelineListItens>
+      </TimelineSectionContainer>
+    </TimelineSectionWrapper>
   );
 };
