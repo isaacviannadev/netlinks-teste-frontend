@@ -9,7 +9,7 @@ import {
   CardAboutSession,
 } from './style';
 
-import LocationIcon from '/public/btnLocation.png';
+import LocationIcon from '/btnLocation.png';
 
 const AboutSection = () => {
   return (

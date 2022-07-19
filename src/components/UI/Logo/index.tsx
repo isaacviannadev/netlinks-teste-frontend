@@ -1,5 +1,5 @@
 import { LogoContainer } from './style';
-import Logo from '/public/fulllogo.png';
+import Logo from '/fulllogo.png';
 
 const NetlinksLogo = () => {
   return <LogoContainer src={Logo} alt='Logo Netlinks' />;

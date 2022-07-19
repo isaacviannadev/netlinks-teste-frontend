@@ -1,11 +1,11 @@
 import { Form } from '../../Form';
 import NetlinksLogo from '../../UI/Logo';
 import { MainSectionContainer, MainSectionWrapper } from './style';
-import People1 from '/public/people1.png';
-import Cliente1 from '/public/Group 1.png';
-import Cliente2 from '/public/Group 2.png';
-import Cliente3 from '/public/Group 3.png';
-import Cliente4 from '/public/Group 4.png';
+import People1 from '/people1.png';
+import Cliente1 from '/Group 1.png';
+import Cliente2 from '/Group 2.png';
+import Cliente3 from '/Group 3.png';
+import Cliente4 from '/Group 4.png';
 
 const MainSection = () => {
   return (

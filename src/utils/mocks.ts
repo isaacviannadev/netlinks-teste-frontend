@@ -47,21 +47,21 @@ export const clientesMock = [
   {
     id: 1,
     nome: 'aluguefoco.com.br',
-    img: '/public/Group 1.png',
+    img: '/Group 1.png',
   },
   {
     id: 2,
     nome: 'precato.com.br',
-    img: '/public/Group 2.png',
+    img: '/Group 2.png',
   },
   {
     id: 3,
     nome: 'virtuspay.com.br',
-    img: '/public/Group 3.png',
+    img: '/Group 3.png',
   },
   {
     id: 4,
     nome: 'scopi.com.br',
-    img: '/public/Group 4.png',
+    img: '/Group 4.png',
   },
 ];

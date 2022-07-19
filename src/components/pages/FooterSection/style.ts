@@ -12,7 +12,7 @@ export const FooterSectionWrapper = styled.section`
 
   &::before {
     content: '';
-    background: var(--primary-color) url('/public/pattern.png') repeat center;
+    background: var(--primary-color) url('/pattern.png') repeat center;
     background-size: 60px;
     background-blend-mode: scree;
     position: absolute;
@@ -20,7 +20,7 @@ export const FooterSectionWrapper = styled.section`
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.5;
+    opacity: 0.1;
   }
 `;
 

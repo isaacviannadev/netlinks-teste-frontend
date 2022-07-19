@@ -1,10 +1,10 @@
 import React from 'react';
 import Card from '../UI/Card';
 
-import cliente1 from '/public/Group 1.png';
-import cliente2 from '/public/Group 2.png';
-import cliente3 from '/public/Group 3.png';
-import cliente4 from '/public/Group 4.png';
+import cliente1 from '/Group 1.png';
+import cliente2 from '/Group 2.png';
+import cliente3 from '/Group 3.png';
+import cliente4 from '/Group 4.png';
 
 import {
   CardClienteContent,

@@ -9,7 +9,7 @@ import {
   FooterSectionWrapper,
 } from './style';
 
-import Cara from '/public/cara2.png';
+import Cara from '/cara2.png';
 
 const FooterSection = () => {
   return (

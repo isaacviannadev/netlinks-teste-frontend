@@ -7,7 +7,7 @@ import {
   CardLiderWrapper,
 } from './style';
 
-import linkedin from '/public/linkedin.png';
+import linkedin from '/linkedin.png';
 
 export type CardLiderProps = {
   id: number;
